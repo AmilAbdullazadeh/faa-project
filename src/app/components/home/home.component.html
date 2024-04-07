@@ -1,0 +1,26 @@
+<h3>Kredit muracieti: </h3>
+
+<form  >
+  <div class="form-group">
+    <input class="form-control-sm" type="text" name="kreditMiqdari" [(ngModel)]="kreditMiqdari" >
+  </div>
+  <select name="kreditMuddeti" id="kreditMuddeti" [(ngModel)]="kreditMuddeti" >
+    <option selected [defaultSelected]="true" >kreditMuddeti</option>
+    <option value="8">8</option>
+    <option value="12">12</option>
+    <option value="24">24</option>
+    <option value="36">36</option>
+  </select>
+
+  <button class="btn btn-outline-success" (click)="kreditHesabla()">Hesabla</button>
+</form>
+
+<p class="text-muted" >
+  kreditMiqdari: {{kreditMiqdari}}
+</p>
+
+<p class="text-muted" >
+  kreditMuddeti: {{kreditMuddeti}}
+</p>
+
+<h4>Kreditin ayliq odenisi: {{ayliqOdenis}}</h4>
