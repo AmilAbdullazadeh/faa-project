@@ -1,1 +1,23 @@
-<p>about works!</p>
+<div class="m-4" >
+  <form class="row g-3">
+    <div class="col-md-4">
+      <label for="todo" class="form-label">To do</label>
+      <input type="text"
+             class="form-control"
+             [ngClass]="{'is-valid': todo.length > 3, 'is-invalid': todo.length < 3}"
+             id="todo" [(ngModel)]="todo" [ngModelOptions]="{standalone: true}" >
+      <div class="invalid-feedback">
+        Minimum 5 characters required
+      </div>
+    </div>
+    <div class="col-md-4">
+      <ul class="list-group">
+        <li class="list-group-item"
+            *ngFor="let item of todos; let i = index" >{{ item }} <button class="mx-2 btn btn-danger" (click)="remove(i)" >Delete</button> </li>
+      </ul>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" [disabled]="todo.length < 3" (click)="add()" >Submit</button>
+    </div>
+  </form>
+</div>
