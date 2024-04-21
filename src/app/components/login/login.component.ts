@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
+import {ListService} from "../../services/list.service";
+import {User} from "../../models/user";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'faa-login',
@@ -10,6 +13,17 @@ export class LoginComponent {
   mark: string = ''
   marks: string[] = []
   moves: any[] = []
+  highlightColor: string = 'red'
+
+  saved: boolean = false;
+
+  save() {
+    this.saved = true;
+  }
+
+  users: User[] = [];
+
+  condition: boolean = false;
 
   newGame() {
     this.marks = [
@@ -40,12 +54,25 @@ export class LoginComponent {
   }
 
   constructor(
-    private router: Router
+    private router: Router,
+    private listService: ListService,
+    private authService: AuthService
   ) {
     this.newGame()
   }
 
+  getUsers() {
+    this.users = this.listService.getUsers()
+  }
+
   gotoHome() {
     this.router.navigate(['/home']);
+  }
+
+  login() {
+    this.authService.login()
+    if (this.authService.isLoggedIn) {
+      this.gotoHome()
+    }
   }
 }

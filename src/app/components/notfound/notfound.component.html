@@ -1,1 +1,10 @@
-<p>notfound works!</p>
+<div class="row">
+  <button class="btn btn-success" (click)="increment()">Increment</button>
+
+  <button class="btn btn-danger" (click)="decrement()">Decrement</button>
+
+  <button class="btn btn-info" (click)="reset()">Reset Counter</button>
+
+  <div>Current Count: {{ count$ | async }}</div>
+
+</div>

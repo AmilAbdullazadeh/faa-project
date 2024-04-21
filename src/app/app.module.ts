@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +11,22 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HighlightDirective } from './directives/highlight.directive';
+import { UnlessDirective } from './directives/unless.directive';
+import {DatePipe} from "@angular/common";
+import { TitlePipe } from './pipes/title.pipe';
+import { BlankComponent } from './components/blank/blank.component';
+import { ListComponent } from './components/list/list.component';
+import { SelectComponent } from './components/select/select.component';
+import { StoreModule } from '@ngrx/store';
+
+import {countReducer} from "./store/counter/counter.reducer";
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import {HttpClientModule} from "@angular/common/http";
+
+const reducers = {
+  counter: countReducer
+}
 
 @NgModule({
   declarations: [
@@ -22,13 +38,22 @@ import { FooterComponent } from './components/footer/footer.component';
     LayoutComponent,
     HeaderComponent,
     FooterComponent,
+    HighlightDirective,
+    UnlessDirective,
+    TitlePipe,
+    BlankComponent,
+    ListComponent,
+    SelectComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    StoreModule.forRoot(reducers, {}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

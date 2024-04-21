@@ -6,5 +6,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-
+  forms = [
+    {
+      name: 'Name',
+      placeholder: 'Enter your name',
+      type: 'text',
+      required: true,
+      value: '',
+      error: ''
+    },
+    {
+      name: 'Email',
+      placeholder: 'Enter your email',
+      type: 'email',
+      required: false,
+      value: '',
+      error: ''
+    },
+    {
+      name: 'Password',
+      placeholder: 'Enter your password',
+      type: 'password',
+      required: true,
+      value: '',
+      error: ''
+    },
+  ]
 }

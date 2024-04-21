@@ -1,0 +1,46 @@
+<div class="input-group my-4">
+  <select class="form-select" #selectList (change)="select(selectList.value)">
+    <option selected>Choose...</option>
+    <option *ngFor="let option of options" [value]="option" >{{ option }}</option>
+  </select>
+</div>
+
+
+<div *ngFor="let element of forms" >
+  <div class="input-group my-4">
+    <input
+      *ngIf="element.type === 'text'"
+      type="text"
+      class="form-control"
+      placeholder="{{ element.placeholder }}"
+      #input
+    >
+  </div>
+  <div class="input-group my-4">
+    <input
+      *ngIf="element.type === 'number'"
+      type="number"
+      class="form-control"
+      placeholder="{{ element.placeholder }}"
+      #input
+    >
+  </div>
+  <div class="input-group my-4">
+    <input
+      *ngIf="element.type === 'email'"
+      type="email"
+      class="form-control"
+      placeholder="{{ element.placeholder }}"
+      #input
+    >
+  </div>
+  <div class="input-group my-4">
+    <input
+      *ngIf="element.type === 'password'"
+      type="password"
+      class="form-control"
+      placeholder="{{ element.placeholder }}"
+      #input
+    >
+  </div>
+</div>
