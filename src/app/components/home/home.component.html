@@ -1,5 +1,15 @@
+<form #personsForm="ngForm" (ngSubmit)="addPerson(personsForm)" >
+  <h3>Person data</h3>
+  <input type="text" [(ngModel)]="persons.name" class="form-control" required minlength="3" maxlength="20" name="name" placeholder="Name">
+  <input type="text" [(ngModel)]="persons.email" class="form-control"  name="email" placeholder="Email">
+  <select class="form-control" [(ngModel)]="persons.role" name="role" >
+    <option *ngFor="let item of roles" [value]="item">{{ item}}</option>
+  </select>
+  <button class="btn btn-success" [disabled]="personsForm.invalid" type="submit" >Add</button>
+</form>
+
 <ul>
-  <li *ngFor="let item of users" >
-    {{ item.title }}
+  <li *ngFor="let item of persons" >
+    {{ item.name }} - {{ item.email }} - {{ item.role }}
   </li>
 </ul>
