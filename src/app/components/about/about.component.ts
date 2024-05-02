@@ -1,12 +1,24 @@
 import { Component } from '@angular/core';
 import {User} from "../../models/user";
 import {ListService} from "../../services/list.service";
-import {DatePipe} from "@angular/common";
+import {CommonModule, DatePipe} from "@angular/common";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import {RouterModule, Routes} from "@angular/router";
+import {TitlePipe} from "../../pipes/title.pipe";
+import {SharedModule} from "../../shared/shared.module";
+import {AboutRoutingModule} from "./about-routing.module";
 
 @Component({
   selector: 'faa-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  styleUrls: ['./about.component.scss'],
+  standalone: true,
+  providers: [DatePipe],
+  imports: [
+    SharedModule,
+    AboutRoutingModule
+  ]
 })
 export class AboutComponent {
     todo: string = '';

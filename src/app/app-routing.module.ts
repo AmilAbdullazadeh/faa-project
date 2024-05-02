@@ -4,14 +4,13 @@ import {HomeComponent} from "./components/home/home.component";
 import {AboutComponent} from "./components/about/about.component";
 import {LayoutComponent} from "./components/layout/layout.component";
 import {NotfoundComponent} from "./components/notfound/notfound.component";
-import {LoginComponent} from "./components/login/login.component";
 import {authGuard} from "./guards/auth.guard";
 import {exitGuard} from "./guards/exit.guard";
 
 const routes: Routes = [
   {
     path: 'login',
-    component: LoginComponent,
+    loadChildren: () => import('./components/login/login.module').then(m => m.LoginModule)
     // canDeactivate: [exitGuard]
   },
   {
@@ -26,7 +25,7 @@ const routes: Routes = [
       },
       {
         path: 'about',
-        component: AboutComponent,
+        loadComponent: () => import('./components/about/about.component').then(m => m.AboutComponent)
       },
       {
         path: '',

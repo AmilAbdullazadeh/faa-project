@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
+import {User} from "../../models/user";
 import {Router} from "@angular/router";
 import {ListService} from "../../services/list.service";
-import {User} from "../../models/user";
 import {AuthService} from "../../services/auth.service";
 
 @Component({
@@ -9,6 +9,7 @@ import {AuthService} from "../../services/auth.service";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
 export class LoginComponent {
   mark: string = ''
   marks: string[] = []

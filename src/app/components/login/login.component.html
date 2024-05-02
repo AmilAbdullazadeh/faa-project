@@ -2,48 +2,48 @@
 <h3 [faaHighlight]="highlightColor" >XoX Game⚡️</h3>
 
 <div class="container my-4">
-<!--  <div class="row">-->
-<!--    <div class="col-12">-->
-<!--      <div class="card">-->
-<!--        <div class="card-body">-->
-<!--          <h5 class="card-title alert alert-warning">Next {{mark}}</h5>-->
-<!--          <button class="btn btn-outline-success w-25" (click)="newGame()" >New Game</button>-->
-<!--          <div class="row my-2">-->
-<!--            <div class="col-4 my-1" *ngFor="let item of marks; let i = index" >-->
-<!--              <button class="btn btn-outline-primary w-100" style="height: 50px;" (click)="add(i)" >{{ item }}</button>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
+  <!--  <div class="row">-->
+  <!--    <div class="col-12">-->
+  <!--      <div class="card">-->
+  <!--        <div class="card-body">-->
+  <!--          <h5 class="card-title alert alert-warning">Next {{mark}}</h5>-->
+  <!--          <button class="btn btn-outline-success w-25" (click)="newGame()" >New Game</button>-->
+  <!--          <div class="row my-2">-->
+  <!--            <div class="col-4 my-1" *ngFor="let item of marks; let i = index" >-->
+  <!--              <button class="btn btn-outline-primary w-100" style="height: 50px;" (click)="add(i)" >{{ item }}</button>-->
+  <!--            </div>-->
+  <!--          </div>-->
+  <!--        </div>-->
+  <!--      </div>-->
 
 
-<!--      <div class="row my-4">-->
-<!--        <div class="col-4 my-1" *ngFor="let item of moves; let i = index" >-->
-<!--          <button class="btn btn-outline-info w-50" style="height: 50px;" (click)="returnMove(i)" >Step: {{ i+1 }}</button>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
+  <!--      <div class="row my-4">-->
+  <!--        <div class="col-4 my-1" *ngFor="let item of moves; let i = index" >-->
+  <!--          <button class="btn btn-outline-info w-50" style="height: 50px;" (click)="returnMove(i)" >Step: {{ i+1 }}</button>-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
 
-<!--  <p>-->
-<!--    The condition is currently-->
-<!--    <span [ngClass]="{ 'a': !condition, 'b': condition, 'unless': true }">{{condition}}</span>.-->
-<!--    <button-->
-<!--      type="button"-->
-<!--      (click)="condition = !condition"-->
-<!--      [ngClass] = "{ 'a': condition, 'b': !condition }" >-->
-<!--      Toggle condition to {{condition ? 'false' : 'true'}}-->
-<!--    </button>-->
-<!--  </p>-->
+  <!--  <p>-->
+  <!--    The condition is currently-->
+  <!--    <span [ngClass]="{ 'a': !condition, 'b': condition, 'unless': true }">{{condition}}</span>.-->
+  <!--    <button-->
+  <!--      type="button"-->
+  <!--      (click)="condition = !condition"-->
+  <!--      [ngClass] = "{ 'a': condition, 'b': !condition }" >-->
+  <!--      Toggle condition to {{condition ? 'false' : 'true'}}-->
+  <!--    </button>-->
+  <!--  </p>-->
 
-<!--  <p *faaUnless="condition" class="unless a">-->
-<!--    (A) This paragraph is displayed because the condition is false.-->
-<!--  </p>-->
+  <!--  <p *faaUnless="condition" class="unless a">-->
+  <!--    (A) This paragraph is displayed because the condition is false.-->
+  <!--  </p>-->
 
-<!--  <p *faaUnless="!condition" class="unless b">-->
-<!--    (B) Although the condition is true,-->
-<!--    this paragraph is displayed because appUnless is set to false.-->
-<!--  </p>-->
+  <!--  <p *faaUnless="!condition" class="unless b">-->
+  <!--    (B) Although the condition is true,-->
+  <!--    this paragraph is displayed because appUnless is set to false.-->
+  <!--  </p>-->
 
 </div>
 <button class="btn btn-outline-danger" (click)="getUsers()" >Get Users</button>
